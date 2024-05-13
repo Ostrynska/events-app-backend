@@ -33,9 +33,9 @@ const eventSchema = new Schema(
                 birthdate: {
                      type: String,
             },
-                referrer: {
+                referrer: [{
                     type: String,
-            },
+            }],
         }
     ],
 }, {versionKey: false, timestamps: true});
