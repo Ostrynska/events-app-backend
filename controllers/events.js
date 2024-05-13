@@ -7,8 +7,8 @@ const listEvents = async (req, res) => {
 }
 
 const getEventById = async (req, res) => {
-    const {id} = req.params;
-    const result = await Event.findById(id);
+    const {_id} = req.params;
+    const result = await Event.findById(_id);
     if (!result) {
       throw HttpError(404, 'Not found');
     }
