@@ -4,7 +4,7 @@ const {handleMongooseError} = require("../helpers");
 
 const eventSchema = new Schema(
     {
-    id: {
+    _id: {
         type: String,
     },
     title: {
@@ -21,7 +21,7 @@ const eventSchema = new Schema(
     },
         participants: [
             {
-                id: {
+                _id: {
                     type: String,
             },
                 name: {
