@@ -2,11 +2,11 @@ const express = require('express');
 
 const router = express.Router();
 
-const ctrl = require('../../controllers/shops');
+const ctrl = require('../../controllers/events');
 const { isValidId } = require('../../middlewares');
 
-router.get('/', ctrl.listShops)
+router.get('/', ctrl.listEvents)
 
-router.get('/:id', isValidId, ctrl.getShopById)
+router.get('/:id', isValidId, ctrl.getEventById)
 
 module.exports = router;

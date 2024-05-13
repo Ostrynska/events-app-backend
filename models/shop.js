@@ -2,34 +2,43 @@ const { Schema, model } = require('mongoose');
 
 const {handleMongooseError} = require("../helpers");
 
-const shopSchema = new Schema(
+const eventSchema = new Schema(
     {
     id: {
         type: String,
     },
-    name: {
+    title: {
         type: String,
     },
-    drugslist: [
+    description: {
+        type: String,
+        },
+    date: {
+        type: String,
+    },
+    organizer: {
+        type: String,
+    },
+    participants: [
             {
                 name: {
                     type: String,
             },
-                photo: {
+                email: {
                      type: String,
             },
-                description: {
+                birthdate: {
                      type: String,
             },
-                price: {
-                    type: Number,
+                referrer: {
+                    type: String,
             },
         }
     ],
 }, {versionKey: false, timestamps: true});
 
-shopSchema.post("save", handleMongooseError);
+eventSchema.post("save", handleMongooseError);
 
-const Shop = model('shop', shopSchema);
+const Event = model('event', eventSchema);
 
-module.exports = Shop;
+module.exports = Event;
