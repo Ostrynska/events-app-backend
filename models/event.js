@@ -19,8 +19,11 @@ const eventSchema = new Schema(
     organizer: {
         type: String,
     },
-    participants: [
+        participants: [
             {
+                id: {
+                    type: String,
+            },
                 name: {
                     type: String,
             },
