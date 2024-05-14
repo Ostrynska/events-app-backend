@@ -7,11 +7,8 @@ const listEvents = async (req, res) => {
 }
 
 const getEventById = async (req, res) => {
-    const { _id } = req.params;
-    const result = await Event.find({ owner: _id }).populate(
-      "owner",
-      "_id name"
-    );
+    const { id } = req.params;
+    const result = await Event.find(id);
     if (!result) {
       throw HttpError(404, 'Not found');
     }

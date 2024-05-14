@@ -35,10 +35,6 @@ const eventSchema = new Schema(
             }],
         }
         ],
-        owner: {
-            type: Schema.Types.ObjectId,
-            ref: 'event'
-        }
 }, {versionKey: false, timestamps: true});
 
 eventSchema.post("save", handleMongooseError);
