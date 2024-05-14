@@ -4,6 +4,9 @@ const {handleMongooseError} = require("../helpers");
 
 const eventSchema = new Schema(
     {
+    id: {
+        type: String,
+    },
     title: {
         type: String,
     },
