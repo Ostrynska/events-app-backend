@@ -4,9 +4,6 @@ const {handleMongooseError} = require("../helpers");
 
 const eventSchema = new Schema(
     {
-    id: {
-        type: String,
-    },
     title: {
         type: String,
     },
@@ -34,7 +31,11 @@ const eventSchema = new Schema(
                     type: String,
             }],
         }
-    ],
+        ],
+        owner: {
+            type: Schema.Types.ObjectId,
+            ref: 'event'
+        }
 }, {versionKey: false, timestamps: true});
 
 eventSchema.post("save", handleMongooseError);

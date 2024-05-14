@@ -7,13 +7,17 @@ const listEvents = async (req, res) => {
 }
 
 const getEventById = async (req, res) => {
-    const {id} = req.params;
-    const result = await Event.findById(id);
+    const { _id } = req.params;
+    const result = await Event.find({ owner: _id }).populate(
+      "owner",
+      "_id name"
+    );
     if (!result) {
       throw HttpError(404, 'Not found');
     }
     res.json(result);
 }
+
 
 module.exports = {
     listEvents: ctrlWrapper(listEvents),
