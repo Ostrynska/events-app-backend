@@ -6,13 +6,13 @@ const listEvents = async (req, res) => {
     res.json(result);
 }
 
-const getEventById = async (req, res) => {
+const getEventById = async (req, res) =>
+{
     const { id } = req.params;
-    const result = await Event.findById(id).populate("owner", "_id name"); 
+    const result = await Event.findById(id);
     if (!result) {
-      throw HttpError(404, 'Not found');
+        throw HttpError(404, 'Not found');
     }
-    res.json(result);
 }
 
 
