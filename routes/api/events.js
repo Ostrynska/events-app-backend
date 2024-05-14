@@ -9,4 +9,6 @@ router.get('/', ctrl.listEvents)
 
 router.get('/:id', isValidId, ctrl.getEventById)
 
+router.post('/:id/participants', isValidId, ctrl.addParticipantToEvent);
+
 module.exports = router;
