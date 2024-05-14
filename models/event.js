@@ -1,11 +1,11 @@
-const { Schema, model, Types } = require('mongoose');
+const { Schema, model } = require('mongoose');
 
 const {handleMongooseError} = require("../helpers");
 
 const eventSchema = new Schema(
     {
-    _id: {
-        type: Types.ObjectId,
+    id: {
+        type: String,
     },
     title: {
         type: String,
